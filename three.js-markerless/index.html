@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.6/control_utils.css" crossorigin="anonymous">
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Vossle</title>
+   
+</head>
+
+<body>
+    <div>
+        <p id="fps" style="display: none;">
+            <!-- <samll><span id="last_fps">-NA-</span></samll> <br /> -->
+            <span id="fps_count">-NA-</span>
+            <span id="hand_elem"></span>
+        </p>
+    </div>
+    <div id="overlay-container">
+        <div id="overlay-close">&times;</div>
+        <div id="overlay"></div>
+    </div>
+    <div id="container">
+        <div class="loading" id="loader">
+            <div class="spinner"></div>
+            <div class="message" id="loading_percentage">
+                Loading
+            </div>
+        </div>
+        <div id="vid_container" class="mirror">
+            <!--- mediapiper controllers-->
+            <div class="control-panel hide1 webview-hidden" style="position: absolute;padding: 20px;"> </div>
+            <!-- for snaps canvas...-->
+            <canvas id="snap_output_canvas" class="snap_output_canvas" style="position: absolute;z-index: 15;display:none;"></canvas>
+            <!-- for realtime time canvas-->
+            <canvas id="video" class="output_canvas" style="position: absolute;z-index: inherit;"></canvas>
+            <!-- origial video feed,.-->
+            <div class="webcam_container" style="display: flex;justify-content: center;">
+                <video id="video1" class="input_video mirror1 selfie" style="display:block;position: absolute; z-index: -2;" muted autoplay playsinline></video>
+            </div>
+            <div id="video_overlay"></div>
+        </div>
+        <div id="gui_controls" style="display: none;">
+            <button id="switchCameraButton" class="webview-hidden" name="switch Camera" type="button" aria-pressed="false"></button>
+            <button id="takePhotoButton" class="webview-hidden" name="take Photo" aria-pressed="false" type="button"></button>
+            <button id="galleryButton" class="webview-hidden" name="see Gallery" aria-pressed="false" type="button"></button>
+            <button id="toggleFullScreenButton" class="webview-hidden" name="toggle FullScreen" type="button" aria-pressed="false"></button>
+            <button id="switch_flash" class="hide webview-hidden">⚡</button>
+        </div>
+        <div class="gallery no-scrollbar close" id="gallery_images_container">
+            <div href="javascript:void(0)" class="galleryCross" id="hideGallery" nclick="toggleGallery()">&times;</div>
+            <div id="gallery_images" class="no-scrollbar">
+            </div>
+        </div>
+    </div>
+    <script>
+        if (window.ReactNativeWebView)
+            document.querySelectorAll(".webview-hidden").forEach(function(el) {
+                el.style.display = 'none';
+            });
+    </script>
+
+    <!-- mediapipe camera utils: can skip this.. -->
+    <script src="./libs/camera_utils.js" crossorigin="anonymous"></script>
+    <!-- mediapipe camera utils: can skip this.. -->
+    <script src="./libs/control_utils.js" crossorigin="anonymous"></script>
+    <!-- mediapipe for drawing connectors..-->
+    <script src="./libs/drawing_utils.js" crossorigin="anonymous"></script>
+    <!-- mediapipe core: required files -->
+    <script src="./libs/hands.js" crossorigin="anonymous"></script>
+    <script src="./js/adapter.min.js" crossorigin="anonymous"></script>
+    <!-- for full screen -->
+    <script src="./js/screenfull.min.js" crossorigin="anonymous"></script>
+    <!-- for sound  -->
+    <script src="./js/howler.core.min.js" crossorigin="anonymous"></script>
+    <script src="./js/main.js" crossorigin="anonymous"></script>
+    <!-- mediapipe initiator: required files -->
+    <script src="./libs/mediapipe.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

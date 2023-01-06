@@ -1,0 +1,15 @@
+{
+    "name": "ORNAZ Virtual Trial Room for Rings",
+    "short_name": "Realtime Try-On",
+    "description": "see rings on your hands on realtime virtually.",
+    "start_url": "/",
+    "background_color": "#f8f8f8",
+    "theme_color": "#45d4d5",
+    "icons": [
+      {
+        "src": "https://d3rodw1h7g0i9b.cloudfront.net/favicons/android-chrome-310x310.png",
+        "sizes": "310x310",
+      "type": "image/png"
+      }
+    ]
+  }
