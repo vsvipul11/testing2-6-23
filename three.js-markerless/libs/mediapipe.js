@@ -55,7 +55,7 @@ const config = {
     locateFile: (file) => {
         if (!filesLoaded.includes(file)) {
             console.log("loading..", file);
-            return `${libs}hands/${file}`;
+            return `https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.1/${file}`;
         } else {
             console.log("already loaded...", file)
         }
