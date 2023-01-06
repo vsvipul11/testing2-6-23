@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/icons/favicon.png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Scan</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<!-- <script src="https://kit.fontawesome.com/e03aa7735b.js" crossorigin="anonymous"></script> -->
+
+<script>
+  // async function callApi(body)
+  // {
+  //   var requestOptions = {
+  //     method: 'POST',
+  //     redirect: 'follow',
+  //     body: body,
+  //     redirect: 'follow',
+  //     header: {
+  //       'Access-Control-Allow-Origin':'*',
+  //     },  
+  //   };
+  //   let resp = await fetch("https://api.morkshub.xyz/ARexperience/webar", requestOptions)
+  //   console.log(resp.status);
+  //   if (resp.status == '500')
+  //   {
+  //       window.location.replace("https://vossle.com/");
+  //   }
+  //   let text = await resp.text()
+  //   let jsonresp = JSON.parse(text)
+  //   return jsonresp;
+  // }
+
+  // (async () => {
+  // var query = window.location.search.replace('?', '');
+  // const [label, value] = query.split('=')
+
+  // var formData = new FormData();
+  // formData.append(label, value);
+  // const jsonResp = await callApi(formData);
+  // const experience = jsonResp.body;
+  // console.log(experience)
+  // const gltfUrl = `url(${experience.content})`;
+
+  // // for qrcode.html
+  // var qr_url = experience.url;
+  // var qr_img = experience.qrcode;
+  // var url_replacable = document.getElementById("qr_url");
+  // var qr_img_tag =document.getElementById("qr_img");
+  
+  // url_replacable.innerHTML= qr_url;
+  // qr_img_tag.setAttribute("src", qr_img);
+  // })();
+</script>
+
+</head>
+<body style="background-color: #2f5177;">
+  <div class="container mt-5" style="color: white; font-size: 20px; text-align: center;" id="container-qr">
+    <div class="row">
+      <div class="col-12">
+        <p>To view align the QR code within frame to scan</p>
+        <div class="image-container">
+          <!-- <img src="./arrow_left_top.png" class="img-fluid" width="30px" />
+          <img src="./arrow_right_top.png" class="img-fluid" width="30px" /> -->
+          <img src="qr-icons/pondsVossle.png" class="img-fluid qr_image_replacable" width="270px" />
+          <!-- <img class="img-fluid qr_image_replacable" id="qr_img" width="270px" /> -->
+        </div>
+        <p class="mt-2">or visit link below</p>
+        <div class="container">
+          <div class="row " style="max-width: 525px; margin-left: auto; margin-right: auto; background-color:#ffffff; min-height: 40px; border-radius: 10px;">
+            <div class="col-10 url_replacable" style="padding: 10px; font-size:1.5rem; color:#2680eb;" id="qr_url"> https://webar.morkshub.xyz/vossle-tryons-hand/</div>
+            <div class="col-2" style="padding: 10px; padding-top: 20px;"><i class="far fa-copy" style="font-size:2rem; color:#2f5a77;"></i></div>
+          </div>
+        </div>
+        <p class="mt-2">on a smartphone or tablet.</p>
+        <img src="qr-icons/logo.png" class="img-fluid" width="250px" />
+      </div>
+    </div>
+  </div>
+</body>
+</html>
